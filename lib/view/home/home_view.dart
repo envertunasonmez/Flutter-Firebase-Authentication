@@ -21,18 +21,72 @@ class HomeView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                context.go('/login');
-              },
-              child: const Text('Login'),
+            Center(
+              child: SizedBox(
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Colors.blue, Colors.purple], 
+                    ),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go('/login');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors
+                          .transparent, 
+                      shadowColor: Colors.transparent,
+                      minimumSize: Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                context.go('/register');
-              },
-              child: const Text('Register'),
+            Center(
+              child: SizedBox(
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Colors.blue, Colors.purple],
+                    ),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go('/register');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors
+                          .transparent,
+                      shadowColor: Colors.transparent,
+                      minimumSize: Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text(
+                      'Register',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
