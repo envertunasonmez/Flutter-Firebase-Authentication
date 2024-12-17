@@ -1,5 +1,5 @@
-import 'package:firebase_authentication/view/auth/login_view.dart';
-import 'package:firebase_authentication/view/auth/register_view.dart';
+import 'package:firebase_authentication/view/auth/login/login_view.dart';
+import 'package:firebase_authentication/view/auth/register/register_view.dart';
 import 'package:firebase_authentication/view/home/home_view.dart';
 import 'package:go_router/go_router.dart';
 
