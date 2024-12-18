@@ -1,4 +1,3 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
 class EmailField extends StatelessWidget {
@@ -18,16 +17,16 @@ class EmailField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          StringConstants.email,
+        const Text(
+          'Email',
           style: TextStyle(color: Colors.white, fontSize: 16),
         ),
         SizedBox(height: screenSize.height * 0.01),
         TextFormField(
           controller: controller,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             prefixIcon: Icon(Icons.email_outlined),
-            hintText: StringConstants.enterYourEmail,
+            hintText: 'Enter your email',
             hintStyle: TextStyle(color: Colors.grey),
             fillColor: Colors.black,
             filled: true,
