@@ -1,3 +1,4 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
 class RegisterButton extends StatelessWidget {
@@ -32,8 +33,8 @@ class RegisterButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            child: const Text(
-              'Register',
+            child:  Text(
+              StringConstants.register,
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
