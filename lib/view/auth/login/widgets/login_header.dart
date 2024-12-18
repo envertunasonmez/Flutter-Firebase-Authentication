@@ -1,3 +1,4 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
 class LoginHeader extends StatelessWidget {
@@ -10,14 +11,14 @@ class LoginHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: screenSize.height * 0.1),
-        const Text(
-          'Log in to your account ✨ ',
+        Text(
+          StringConstants.logInToYourAccount,
           style: TextStyle(
               color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: screenSize.height * 0.02),
-        const Text(
-          'Welcome back! Please enter your details',
+        Text(
+          StringConstants.welcomeBack,
           style: TextStyle(color: Colors.grey, fontSize: 16),
         ),
         SizedBox(height: screenSize.height * 0.03),
