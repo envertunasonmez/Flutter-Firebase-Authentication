@@ -5,15 +5,37 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_authentication/bloc/auth/login/login_bloc.dart';
 import 'package:firebase_authentication/bloc/auth/login/login_event.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
   @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  final FocusNode passwordFocusNode = FocusNode();
+  final FocusNode emailFocusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    passwordFocusNode.dispose();
+    emailFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final FocusNode passwordFocusNode = FocusNode();
-    final FocusNode emailFocusNode = FocusNode();
     final screenSize = MediaQuery.of(context).size;
 
     return Column(
@@ -24,7 +46,7 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: screenSize.height * 0.01),
         TextFormField(
           controller: emailController,
-          focusNode: emailFocusNode, // FocusNode eklenmiş
+          focusNode: emailFocusNode,
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.email_outlined),
             hintText: StringConstants.enterYourEmail,
@@ -37,7 +59,6 @@ class LoginForm extends StatelessWidget {
           style: const TextStyle(color: Colors.white),
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (_) {
-            // Email alanından password alanına geçiş
             FocusScope.of(context).requestFocus(passwordFocusNode);
           },
         ),
@@ -49,7 +70,7 @@ class LoginForm extends StatelessWidget {
           builder: (context, isPasswordVisible) {
             return TextFormField(
               controller: passwordController,
-              focusNode: passwordFocusNode, // FocusNode eklenmiş
+              focusNode: passwordFocusNode,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.lock_outline_rounded),
                 suffixIcon: IconButton(

@@ -8,7 +8,7 @@ class Providers {
   static List<BlocProvider> get providers {
     return [
       BlocProvider<LoginBloc>(
-        create: (context) => LoginBloc(),
+        create: (context) => LoginBloc(FirebaseAuth.instance),
       ),
       BlocProvider<PasswordVisibilityCubit>(
         create: (context) => PasswordVisibilityCubit(),
