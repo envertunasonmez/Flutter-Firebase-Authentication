@@ -1,4 +1,3 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
 class SocialLoginButtons extends StatelessWidget {
@@ -19,14 +18,16 @@ class SocialLoginButtons extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // Google ile giriş için işlem
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(Icons.g_mobiledata, color: Colors.white, size: 30),
                 SizedBox(width: 8),
                 Text(
-                  StringConstants.logInWithGoogle,
+                  'Log in with Google',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
@@ -45,14 +46,16 @@ class SocialLoginButtons extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // Apple ile giriş için işlem
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(Icons.apple, color: Colors.white, size: 30),
                 SizedBox(width: 8),
                 Text(
-                  StringConstants.logInWithApple,
+                  'Log in with Apple',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
