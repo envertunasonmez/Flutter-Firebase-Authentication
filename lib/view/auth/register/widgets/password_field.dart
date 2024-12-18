@@ -1,4 +1,7 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:firebase_authentication/cubit/password_visibility_cubit.dart'; // Cubit import
 
 class PasswordField extends StatelessWidget {
   final TextEditingController controller;
@@ -19,31 +22,48 @@ class PasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          labelText,
-          style: const TextStyle(color: Colors.white, fontSize: 16),
-        ),
-        SizedBox(height: screenSize.height * 0.01),
-        TextFormField(
-          controller: controller,
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.lock_outline),
-            hintText: 'Enter your password',
-            hintStyle: TextStyle(color: Colors.grey),
-            fillColor: Colors.black,
-            filled: true,
-            border: OutlineInputBorder(),
-          ),
-          obscureText: true,
-          style: const TextStyle(color: Colors.white),
-          textInputAction: TextInputAction.next,
-          onFieldSubmitted: onFieldSubmitted,
-        ),
-      ],
+    return BlocBuilder<PasswordVisibilityCubit, bool>(
+      builder: (context, isPasswordVisible) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              labelText,
+              style: const TextStyle(color: Colors.white, fontSize: 16),
+            ),
+            SizedBox(height: screenSize.height * 0.01),
+            TextFormField(
+              controller: controller,
+              focusNode: focusNode,
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.lock_outline),
+                hintText: StringConstants.enterYourPassword,
+                hintStyle: const TextStyle(color: Colors.grey),
+                fillColor: Colors.black,
+                filled: true,
+                border: const OutlineInputBorder(),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    // Toggle password visibility
+                    context
+                        .read<PasswordVisibilityCubit>()
+                        .togglePasswordVisibility();
+                  },
+                ),
+              ),
+              obscureText:
+                  !isPasswordVisible, // Show or hide password based on cubit state
+              style: const TextStyle(color: Colors.white),
+              textInputAction: TextInputAction.next,
+              onFieldSubmitted: onFieldSubmitted,
+            ),
+          ],
+        );
+      },
     );
   }
 }

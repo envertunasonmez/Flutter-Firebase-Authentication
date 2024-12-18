@@ -1,3 +1,4 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:firebase_authentication/view/auth/register/widgets/email_field.dart';
 import 'package:firebase_authentication/view/auth/register/widgets/password_field.dart';
 import 'package:firebase_authentication/view/auth/register/widgets/register_button.dart';
@@ -21,24 +22,32 @@ class RegisterView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => context.go('/'),
+        ),
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.all(screenSize.width * 0.04),
+          padding: EdgeInsets.all(screenSize.width * 0.06),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: screenSize.height * 0.1),
-              const Text(
-                'Create your account ✨ ',
+              Text(
+                StringConstants.createYourAccount,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: screenSize.height * 0.02),
-              const Text(
-                'Welcome! Please enter your details.',
+              Text(
+                StringConstants.welcome,
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               SizedBox(height: screenSize.height * 0.03),
@@ -51,16 +60,16 @@ class RegisterView extends StatelessWidget {
                 controller: passwordController,
                 focusNode: passwordFocusNode,
                 nextFocusNode: confirmPasswordFocusNode,
-                labelText: 'Password',
+                labelText: StringConstants.password,
               ),
               const SizedBox(height: 20),
               PasswordField(
                 controller: confirmPasswordController,
                 focusNode: confirmPasswordFocusNode,
-                nextFocusNode: FocusNode(), 
-                labelText: 'Confirm Password',
+                nextFocusNode: FocusNode(),
+                labelText: StringConstants.confirmPassword,
                 onFieldSubmitted: (_) {
-                  FocusScope.of(context).unfocus(); 
+                  FocusScope.of(context).unfocus();
                 },
               ),
               const SizedBox(height: 20),
@@ -73,16 +82,16 @@ class RegisterView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Already have an account?",
+                  Text(
+                    StringConstants.alreadyHaveAnAccount,
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   TextButton(
                     onPressed: () {
                       context.go('/login');
                     },
-                    child: const Text(
-                      'Log In',
+                    child: Text(
+                      StringConstants.logIn,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,

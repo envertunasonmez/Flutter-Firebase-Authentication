@@ -1,3 +1,4 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_authentication/bloc/auth/login/login_bloc.dart';
@@ -44,8 +45,8 @@ class LoginButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            child: const Text(
-              'Log In',
+            child: Text(
+              StringConstants.logIn,
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
