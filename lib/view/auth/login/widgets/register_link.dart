@@ -1,3 +1,4 @@
+import 'package:firebase_authentication/products/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,16 +10,16 @@ class RegisterLink extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Don't have an account?",
+         Text(
+          StringConstants.doNotHaveAnAccount,
           style: TextStyle(color: Colors.white, fontSize: 16),
         ),
         TextButton(
           onPressed: () {
             context.go('/register');
           },
-          child: const Text(
-            'Sign Up',
+          child: Text(
+            StringConstants.signUp,
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,
