@@ -59,7 +59,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
         backgroundColor: Colors.black,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.go('/'),
         ),
         elevation: 0,
       ),
