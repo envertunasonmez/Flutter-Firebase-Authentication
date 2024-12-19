@@ -17,4 +17,13 @@ class StringConstants {
   static String alreadyHaveAnAccount = 'Allready have an account?';
   static String welcome = 'Welcome! Please enter your details.';
   static String enterYourPassword = 'Enter your password';
+  static String passwordDoNotMatch = "Passwords Don't Match";
+  static String registrationSuccesful = 'Registration Succesful!';
+  static String anErrorOccured = 'An error occured';
+  static String userNotFount = 'User not found';
+  static String noUserFoundForThatEmail = 'No user found for that email';
+  static String wrongPassword = 'Wrong Password';
+  static String wrongPasswordProvided = 'Wrong password provided';
+  static String congratulations = 'Congratulations';
+  static String loginSuccesful = 'Login succesful';
 }

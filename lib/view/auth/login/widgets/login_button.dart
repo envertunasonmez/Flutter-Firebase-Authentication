@@ -1,8 +1,5 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_event.dart';
+import 'package:firebase_authentication/view/auth/login/login_view_imports.dart';
+
 
 class LoginButton extends StatelessWidget {
   final TextEditingController emailController;
@@ -33,7 +30,6 @@ class LoginButton extends StatelessWidget {
                 final email = emailController.text;
                 final password = passwordController.text;
 
-                // Giriş event'ini tetikleme
                 context.read<LoginBloc>().add(
                       SubmitLoginEvent(email, password),
                     );

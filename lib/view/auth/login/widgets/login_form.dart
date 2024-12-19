@@ -1,9 +1,8 @@
-import 'package:firebase_authentication/cubit/password_visibility_cubit.dart';
-import 'package:firebase_authentication/products/constants/string_constants.dart';
+
+import 'package:firebase_authentication/view/auth/login/login_view_imports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_event.dart';
+
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -90,7 +89,7 @@ class _LoginFormState extends State<LoginForm> {
                 filled: true,
                 border: OutlineInputBorder(),
               ),
-              obscureText: !isPasswordVisible,
+              obscureText: isPasswordVisible,
               style: const TextStyle(color: Colors.white),
               textInputAction: TextInputAction.done,
               onFieldSubmitted: (_) {

@@ -1,5 +1,4 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_authentication/view/auth/login/login_view_imports.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});

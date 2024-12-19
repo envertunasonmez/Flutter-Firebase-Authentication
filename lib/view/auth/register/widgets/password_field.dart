@@ -1,7 +1,4 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_authentication/cubit/password_visibility_cubit.dart'; // Cubit import
+import 'package:firebase_authentication/view/auth/register/register_view_imports.dart';
 
 class PasswordField extends StatelessWidget {
   final TextEditingController controller;
@@ -48,20 +45,17 @@ class PasswordField extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    // Toggle password visibility
                     context
                         .read<PasswordVisibilityCubit>()
                         .togglePasswordVisibility();
                   },
                 ),
               ),
-              obscureText:
-                  !isPasswordVisible, // Show or hide password based on cubit state
+              obscureText: isPasswordVisible,
               style: const TextStyle(color: Colors.white),
               textInputAction: TextInputAction.next,
               onFieldSubmitted: (_) {
-                FocusScope.of(context).requestFocus(
-                    nextFocusNode); // Passworddan confirm passworda geçiş
+                FocusScope.of(context).requestFocus(nextFocusNode);
               },
             ),
           ],

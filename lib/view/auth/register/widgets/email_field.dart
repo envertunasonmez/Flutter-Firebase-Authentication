@@ -1,5 +1,4 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_authentication/view/auth/register/register_view_imports.dart';
 
 class EmailField extends StatelessWidget {
   final TextEditingController controller;
