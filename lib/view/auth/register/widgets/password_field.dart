@@ -56,7 +56,7 @@ class PasswordField extends StatelessWidget {
                 ),
               ),
               obscureText:
-                  !isPasswordVisible, // Show or hide password based on cubit state
+                  isPasswordVisible, // Show or hide password based on cubit state
               style: const TextStyle(color: Colors.white),
               textInputAction: TextInputAction.next,
               onFieldSubmitted: (_) {

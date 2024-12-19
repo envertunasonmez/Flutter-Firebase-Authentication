@@ -90,7 +90,7 @@ class _LoginFormState extends State<LoginForm> {
                 filled: true,
                 border: OutlineInputBorder(),
               ),
-              obscureText: !isPasswordVisible,
+              obscureText: isPasswordVisible,
               style: const TextStyle(color: Colors.white),
               textInputAction: TextInputAction.done,
               onFieldSubmitted: (_) {
