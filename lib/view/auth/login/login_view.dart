@@ -1,14 +1,6 @@
-import 'package:firebase_authentication/view/auth/login/widgets/login_button.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/login/login_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'widgets/login_header.dart';
-import 'widgets/login_form.dart';
-import 'widgets/social_login_buttons.dart';
-import 'widgets/register_link.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_authentication/view/auth/login/login_view_imports.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

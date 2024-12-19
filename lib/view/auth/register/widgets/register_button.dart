@@ -1,5 +1,4 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_authentication/view/auth/register/register_view_imports.dart';
 
 class RegisterButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -33,7 +32,7 @@ class RegisterButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            child:  Text(
+            child: Text(
               StringConstants.register,
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),

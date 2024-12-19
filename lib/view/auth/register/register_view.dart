@@ -1,14 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:firebase_authentication/bloc/auth/register/register_bloc.dart';
-import 'package:firebase_authentication/bloc/auth/register/register_event.dart';
-import 'package:firebase_authentication/bloc/auth/register/register_state.dart';
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:firebase_authentication/view/auth/register/widgets/email_field.dart';
-import 'package:firebase_authentication/view/auth/register/widgets/password_field.dart';
-import 'package:firebase_authentication/view/auth/register/widgets/register_button.dart';
+import 'package:firebase_authentication/view/auth/register/register_view_imports.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

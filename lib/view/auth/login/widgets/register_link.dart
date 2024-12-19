@@ -1,5 +1,4 @@
-import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_authentication/view/auth/login/login_view_imports.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterLink extends StatelessWidget {
@@ -10,7 +9,7 @@ class RegisterLink extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-         Text(
+        Text(
           StringConstants.doNotHaveAnAccount,
           style: TextStyle(color: Colors.white, fontSize: 16),
         ),
