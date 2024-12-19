@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:firebase_authentication/bloc/auth/register/register_bloc.dart';
 import 'package:firebase_authentication/bloc/auth/register/register_event.dart';
 import 'package:firebase_authentication/bloc/auth/register/register_state.dart';
 import 'package:firebase_authentication/products/constants/string_constants.dart';
-import 'package:go_router/go_router.dart';
-import 'widgets/email_field.dart';
-import 'widgets/password_field.dart';
-import 'widgets/register_button.dart';
+import 'package:firebase_authentication/view/auth/register/widgets/email_field.dart';
+import 'package:firebase_authentication/view/auth/register/widgets/password_field.dart';
+import 'package:firebase_authentication/view/auth/register/widgets/register_button.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -16,8 +16,7 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          RegisterBloc(FirebaseAuth.instance), 
+      create: (_) => RegisterBloc(FirebaseAuth.instance),
       child: RegisterViewBody(),
     );
   }
@@ -114,7 +113,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   listener: (context, state) {
                     if (state is RegisterSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text('Kayıt başarılı!'),
+                        content: Text(StringConstants.registrationSuccesful),
                         backgroundColor: Colors.green,
                       ));
                     } else if (state is RegisterFailure) {
@@ -140,7 +139,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                           );
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("Şifreler eşleşmiyor!"),
+                            content: Text(StringConstants.passwordDoNotMatch),
                             backgroundColor: Colors.red,
                           ));
                         }

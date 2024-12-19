@@ -48,7 +48,6 @@ class PasswordField extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    // Toggle password visibility
                     context
                         .read<PasswordVisibilityCubit>()
                         .togglePasswordVisibility();
