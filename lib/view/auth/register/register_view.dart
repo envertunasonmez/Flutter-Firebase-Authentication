@@ -17,7 +17,7 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) =>
-          RegisterBloc(FirebaseAuth.instance), // RegisterBloc burada sağlanıyor
+          RegisterBloc(FirebaseAuth.instance), 
       child: RegisterViewBody(),
     );
   }

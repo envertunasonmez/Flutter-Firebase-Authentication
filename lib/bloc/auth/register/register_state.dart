@@ -1,4 +1,3 @@
-// register_state.dart
 abstract class RegisterState {}
 
 class RegisterInitial extends RegisterState {}

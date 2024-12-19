@@ -33,7 +33,6 @@ class LoginButton extends StatelessWidget {
                 final email = emailController.text;
                 final password = passwordController.text;
 
-                // Giriş event'ini tetikleme
                 context.read<LoginBloc>().add(
                       SubmitLoginEvent(email, password),
                     );

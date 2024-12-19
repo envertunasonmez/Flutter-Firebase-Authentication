@@ -8,14 +8,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
   RegisterBloc(this._firebaseAuth) : super(RegisterInitial()) {
     on<RegisterWithEmailEvent>((event, emit) async {
-      emit(RegisterLoading()); // Yükleniyor durumu
+      emit(RegisterLoading());
 
       try {
         await _firebaseAuth.createUserWithEmailAndPassword(
           email: event.email,
           password: event.password,
         );
-        emit(RegisterSuccess()); // Başarı durumu
+        emit(RegisterSuccess());
       } on FirebaseAuthException catch (e) {
         emit(RegisterFailure(errorMessage: e.message ?? "Bir hata oluştu"));
       }
